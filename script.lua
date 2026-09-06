@@ -1,5 +1,5 @@
 --[[ DEATH HUB • generated script
-     Features: Speed Bypass, Auto Steal
+     Features: Script
 ]]
 
 local Players = game:GetService("Players")
@@ -7,8 +7,7 @@ local RunService = game:GetService("RunService")
 local LP = Players.LocalPlayer
 
 local Config = {
-    ["Speed Bypass"] = true,
-    ["Auto Steal"] = true,
+    ["Script"] = true,
 }
 
 -- intro (blur + flash + sliding word, like the video)
@@ -101,24 +100,14 @@ end
 
 task.spawn(playIntro)
 
--- Speed Bypass
-if Config["Speed Bypass"] then
+-- Script
+if Config["Script"] then
     task.spawn(function()
         while task.wait(0.1) do
             if not LP.Character then continue end
-            -- TODO: Speed Bypass logic
+            -- TODO: Script logic
         end
     end)
 end
 
--- Auto Steal
-if Config["Auto Steal"] then
-    task.spawn(function()
-        while task.wait(0.1) do
-            if not LP.Character then continue end
-            -- TODO: Auto Steal logic
-        end
-    end)
-end
-
-warn("[DEATH HUB] loaded 2 feature(s)")
+warn("[DEATH HUB] loaded 1 feature(s)")
