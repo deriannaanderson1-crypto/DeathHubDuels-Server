@@ -83,7 +83,17 @@ local function playIntro()
         end
     end)
 
-    -- no mp3 link provided
+    -- intro song
+    task.spawn(function()
+        local ok, data = pcall(function() return game:HttpGet("https://files.catbox.moe/ejdk0u.mp3") end)
+        if ok and writefile and getcustomasset then
+            writefile("hub_intro.mp3", data)
+            local sound = Instance.new("Sound", gui)
+            sound.SoundId = getcustomasset("hub_intro.mp3")
+            sound.Volume = 1
+            sound:Play()
+        end
+    end)
 
     task.delay(5.4, function()
         local out = TweenInfo.new(0.8)
